@@ -49,7 +49,23 @@
     [self saveContext];
 }
 
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
+    //    [[UIApplication sharedApplication] openURL:url];
+    return YES;
+}
 
+/*******************系统回调的方法**********************************/
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return YES;
+}
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    return YES;
+}
 #pragma mark - Core Data stack
 
 @synthesize persistentContainer = _persistentContainer;
